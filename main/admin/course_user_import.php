@@ -96,7 +96,7 @@ function save_data($users_courses)
 
         if ($_POST['subscribe']) {
             foreach ($to_subscribe as $courseId) {
-                $courseInfo = api_get_course_info_by_id($courseId);
+                $courseInfo = api_get_course_info($courseId);
                 $course_code = $courseInfo['code'];
 
                 if (CourseManager :: course_exists($course_code)) {
@@ -114,7 +114,7 @@ function save_data($users_courses)
 
         if ($_POST['unsubscribe']) {
             foreach ($to_unsubscribe as $courseId) {
-                $courseInfo = api_get_course_info_by_id($courseId);
+                $courseInfo = api_get_course_info($courseId);
                 $course_code = $courseInfo['code'];
 
                 if (CourseManager :: course_exists($course_code)) {
